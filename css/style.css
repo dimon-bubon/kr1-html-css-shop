@@ -1,5 +1,7 @@
 html {
   scroll-behavior: smooth;
+  /* высота закреплённой шапки: якоря (#popular и т.д.) не прячутся под ней */
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -53,7 +55,6 @@ section h2 {
   Задаём внутренние отступы для основных областей страницы.
   Это делает содержимое визуально отделённым от краёв окна браузера.
 */
-header,
 main,
 footer {
   padding: var(--space-lg);
@@ -61,11 +62,18 @@ footer {
 
 
 /*
-  Оформляем шапку страницы.
-  Пока используется простой светло-серый фон.
+  Шапка закреплена сверху: position: sticky + top: 0.
+  Шапка должна быть прямым потомком body (без overflow у родителей),
+  z-index держит её поверх карточек и форм при прокрутке.
 */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: var(--space-sm) var(--space-lg);
   background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 /*
@@ -80,7 +88,12 @@ footer {
   чтобы оно не растягивалось слишком сильно на широких экранах.
 */
 .site-header {
-  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between; /* логотип слева, меню справа */
+  gap: var(--space-sm) var(--space-lg);
+  max-width: var(--container-width);
   margin: 0 auto;
 }
 
@@ -88,6 +101,7 @@ footer {
   Оформляем текстовый логотип.
 */
 .site-logo {
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   color: #222222;
@@ -99,11 +113,11 @@ footer {
 .site-nav__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  gap: var(--space-md);
+  gap: var(--space-xs);
   padding: 0;
-  margin: var(--space-md) 0 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -112,7 +126,7 @@ footer {
   Добавляем расстояние между пунктами меню.
 */
 .site-nav__list li {
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 /*
@@ -158,21 +172,33 @@ footer {
   margin-top: 0;
 }
 
+/*
+  Сетка карточек: товары стоят в ряд (3 колонки),
+  карточки в одной строке имеют одинаковую высоту.
+*/
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--space-md);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
 }
+
 
 .product-card {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--space-md);
+  gap: var(--space-sm);
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
 }
+
+.product-card .button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+
 
 .product-card:hover {
   border-color: var(--color-primary);
@@ -186,17 +212,44 @@ footer {
 }
 
 .product-card__title {
-  margin: 0 0 var(--space-sm);
+  margin: 0; /* расстояния задаёт gap у карточки */
 }
 
 .product-card__description {
+  margin: 0;
   color: var(--color-muted);
   flex-grow: 1; /* растягивается, "выталкивая" цену и кнопку вниз */
 }
 
 .product-card__price {
+  margin: 0;
   font-weight: bold;
-  margin: var(--space-sm) 0;
+}
+
+/* ===============================
+   Преимущества (Flex)
+   =============================== */
+.advantages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.advantages__item {
+  flex: 1 1 220px; /* растут поровну, переносятся на новую строку от 220px */
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.advantages__item h3,
+.advantages__item p {
+  margin: 0;
+}
+
+.advantages__item h3 {
+  margin-bottom: var(--space-xs);
 }
 
 /*
@@ -507,4 +560,117 @@ a:focus-visible {
 :target {
   outline: 2px dashed var(--color-primary);
   outline-offset: 4px;
+}
+
+.catalog-layout {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-areas: "filters products";
+  align-items: start; /* панель фильтров не растягивается на всю высоту */
+  gap: var(--space-lg);
+}
+
+.catalog-filters {
+  grid-area: filters;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.catalog-filters h2 {
+  margin: 0 0 var(--space-md);
+}
+
+.catalog-products {
+  grid-area: products;
+  min-width: 0; /* иначе длинное содержимое распирает колонку 1fr */
+}
+
+.catalog-products h1 {
+  margin: 0 0 var(--space-md);
+}
+
+.filters-form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.filters-form fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.filters-form legend {
+  font-weight: 700;
+}
+
+.filters-form label {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.filters-form input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+}
+
+/* ===============================
+   Адаптив
+   =============================== */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 110px;
+  }
+
+  header {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  /* логотип над меню, меню прокручивается по горизонтали */
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .site-nav {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .site-nav__list {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    white-space: nowrap;
+  }
+
+  /* фильтры над списком товаров */
+  .catalog-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "filters"
+      "products";
+  }
+}
+
+/* на средних экранах — 2 карточки в ряд, на телефонах — одна */
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
 }
