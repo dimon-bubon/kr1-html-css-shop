@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -146,11 +150,16 @@ footer {
 .section h2 {
   margin-top: 0;
 }
-/*
-  Карточка товара — самостоятельный блок.
-  На следующих занятиях карточки будут доработаны и выстроены в сетку.
-*/
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
 .product-card {
+  display: flex;
+  flex-direction: column;
   margin-bottom: var(--space-md);
   padding: var(--space-md);
   border: 1px solid var(--color-border);
@@ -162,8 +171,25 @@ footer {
   border-color: var(--color-primary);
 }
 
-.product-card h3 {
-  margin-top: 0;
+.product-card__img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.product-card__title {
+  margin: 0 0 var(--space-sm);
+}
+
+.product-card__description {
+  color: var(--color-muted);
+  flex-grow: 1; /* растягивается, "выталкивая" цену и кнопку вниз */
+}
+
+.product-card__price {
+  font-weight: bold;
+  margin: var(--space-sm) 0;
 }
 
 /*
@@ -453,4 +479,25 @@ a:focus-visible {
 
 [aria-invalid="true"] {
   border-color: var(--color-danger);
+}
+
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+}
+
+.breadcrumbs span::before {
+  content: " / ";
+  color: var(--color-muted);
+}
+
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
 }
