@@ -97,10 +97,16 @@ footer {
   Убираем стандартные отступы и маркеры списка навигации.
 */
 .site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
   padding: 0;
-  margin: 16px 0 0;
+  margin: var(--space-md) 0 0;
   list-style: none;
 }
+
 
 /*
   Добавляем расстояние между пунктами меню.
@@ -113,17 +119,18 @@ footer {
   Оформляем ссылки меню.
 */
 .site-nav__list a {
-  color: #0057b8;
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-primary);
   text-decoration: none;
+  border-radius: var(--radius-sm);
 }
 
-/*
-  При наведении мыши подчёркиваем ссылку.
-  Подробно состояния интерфейса будут рассмотрены в практической работе 1.7.
-*/
 .site-nav__list a:hover {
-  text-decoration: underline;
+  color: var(--color-white);
+  background-color: var(--color-primary);
 }
+
 /*
   Hero-блок — первый крупный блок страницы.
   Он визуально отделяется от остальных разделов фоном и отступами.
