@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Товар 1: подробное описание, характеристики, цена и отзывы покупателей учебного интернет-магазина.">
+  <title>Товар 1 — Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Товар 1 — Учебный интернет-магазин">
+  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+  <meta property="og:image" content="https://dimon-bubon.github.io/kr1-html-css-shop/images/preview.jpg">
+</head>
+<body>
+  <header>
+    <div class="site-header">
+      <a class="site-logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.html#advantages">Преимущества</a></li>
+          <li><a href="index.html#popular">Популярные товары</a></li>
+          <li><a href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span><a href="catalog.html">Каталог</a></span>
+      <span aria-current="page">Товар 1</span>
+    </nav>
+
+    <article class="product">
+      <div class="gallery">
+        <input class="gallery__radio" type="radio" name="gallery" id="gallery-1" checked aria-label="Фото 1: вид спереди">
+        <input class="gallery__radio" type="radio" name="gallery" id="gallery-2" aria-label="Фото 2: в открытом виде">
+        <input class="gallery__radio" type="radio" name="gallery" id="gallery-3" aria-label="Фото 3: крупный план">
+
+        <div class="gallery__stage">
+          <span class="gallery__badge">Хит</span>
+
+          <figure class="gallery__slide gallery__slide--1">
+            <img src="images/product-1.svg" width="800" height="600" alt="Товар 1: учебный набор в синей коробке, вид спереди">
+          </figure>
+          <figure class="gallery__slide gallery__slide--2">
+            <img src="images/product-1-2.svg" width="800" height="600" alt="Товар 1: набор с открытой крышкой">
+          </figure>
+          <figure class="gallery__slide gallery__slide--3">
+            <img src="images/product-1-3.svg" width="800" height="600" alt="Товар 1: крупный план комплектации">
+          </figure>
+        </div>
+
+        <div class="gallery__thumbs">
+          <label class="gallery__thumb gallery__thumb--1" for="gallery-1">
+            <img src="images/product-1.svg" width="800" height="600" alt="Показать фото 1">
+          </label>
+          <label class="gallery__thumb gallery__thumb--2" for="gallery-2">
+            <img src="images/product-1-2.svg" width="800" height="600" alt="Показать фото 2">
+          </label>
+          <label class="gallery__thumb gallery__thumb--3" for="gallery-3">
+            <img src="images/product-1-3.svg" width="800" height="600" alt="Показать фото 3">
+          </label>
+        </div>
+      </div>
+
+      <div class="product__info">
+        <p class="product__category">Учебные наборы</p>
+        <h1 class="product__title">Товар 1</h1>
+
+        <p class="product__meta">
+          <span>
+            <span class="rating" style="--rating: 4.6" aria-hidden="true">★★★★★</span>
+            <a href="#reviews"><span class="visually-hidden">Рейтинг </span>4,6<span class="visually-hidden"> из 5,</span> <span aria-hidden="true">·</span> 24 отзыва</a>
+          </span>
+          <span>Артикул: SP-001</span>
+        </p>
+
+        <div class="product__price-box">
+          <p class="product__price">1000 руб.</p>
+          <p class="stock stock--in">В наличии, отправим в день заявки</p>
+        </div>
+
+        <p class="product__lead">
+          Базовый учебный набор для знакомства с интернет-магазином:
+          компактная упаковка, понятная инструкция и поддержка покупателей.
+        </p>
+
+        <ul class="product__features">
+          <li>Отправка в день оформления заявки</li>
+          <li>Проверка качества перед отправкой</li>
+          <li>Ответ на вопросы в течение рабочего дня</li>
+        </ul>
+
+        <div class="product__actions">
+          <button class="button" type="button" data-product="Товар 1" data-price="1000 руб.">Заказать</button>
+          <a class="button button--secondary" href="contacts.html">Задать вопрос</a>
+        </div>
+
+        <aside class="product__aside" aria-labelledby="delivery-title">
+          <h2 id="delivery-title">Доставка и оплата</h2>
+          <dl class="info-list">
+            <dt>Доставка</dt>
+            <dd>отправка в день заявки</dd>
+            <dt>Самовывоз</dt>
+            <dd>г. Москва, учебный проект</dd>
+            <dt>Оплата</dt>
+            <dd>при получении или онлайн</dd>
+            <dt>Возврат</dt>
+            <dd>в течение 14 дней</dd>
+          </dl>
+        </aside>
+      </div>
+    </article>
+
+    <nav class="product-tabs" aria-label="Разделы карточки товара">
+      <a href="#description">Описание</a>
+      <a href="#specs">Характеристики</a>
+      <a href="#reviews">Отзывы (24)</a>
+    </nav>
+
+    <section class="section" id="description">
+      <h2>Описание</h2>
+      <p>
+        Товар 1 — базовый набор для тех, кто только знакомится с каталогом
+        учебного магазина. Он подходит для первых заказов, лёгкий и не требует
+        дополнительной подготовки: достаточно открыть коробку и следовать инструкции.
+      </p>
+      <p>Что входит в комплект:</p>
+      <ul class="product-features-list">
+        <li>основной набор в фирменной коробке;</li>
+        <li>печатная инструкция на русском языке;</li>
+        <li>гарантийный талон.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="specs">
+      <table class="product-table">
+        <caption>Характеристики товара</caption>
+        <thead>
+          <tr>
+            <th scope="col">Параметр</th>
+            <th scope="col">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Категория</th>
+            <td>Учебные наборы</td>
+          </tr>
+          <tr>
+            <th scope="row">Артикул</th>
+            <td>SP-001</td>
+          </tr>
+          <tr>
+            <th scope="row">Цена</th>
+            <td>1000 руб.</td>
+          </tr>
+          <tr>
+            <th scope="row">Наличие</th>
+            <td>В наличии</td>
+          </tr>
+          <tr>
+            <th scope="row">Габариты</th>
+            <td>25 × 18 × 8 см</td>
+          </tr>
+          <tr>
+            <th scope="row">Вес</th>
+            <td>450 г</td>
+          </tr>
+          <tr>
+            <th scope="row">Материал упаковки</th>
+            <td>картон</td>
+          </tr>
+          <tr>
+            <th scope="row">Гарантия</th>
+            <td>12 месяцев</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+      <h2 id="reviews-title">Отзывы покупателей</h2>
+
+      <div class="reviews__summary">
+        <div class="reviews__score">
+          <p class="reviews__score-value"><span class="visually-hidden">Средняя оценка </span>4,6</p>
+          <span class="rating" style="--rating: 4.6" aria-hidden="true">★★★★★</span>
+          <p class="reviews__score-count">на основе 24 отзывов</p>
+        </div>
+
+        <ul class="rating-bars" aria-label="Распределение оценок">
+          <li class="rating-bars__row">
+            <span>5 ★</span>
+            <span class="rating-bars__track"><span class="rating-bars__fill" style="--value: 75%"></span></span>
+            <span class="rating-bars__count">18</span>
+          </li>
+          <li class="rating-bars__row">
+            <span>4 ★</span>
+            <span class="rating-bars__track"><span class="rating-bars__fill" style="--value: 17%"></span></span>
+            <span class="rating-bars__count">4</span>
+          </li>
+          <li class="rating-bars__row">
+            <span>3 ★</span>
+            <span class="rating-bars__track"><span class="rating-bars__fill" style="--value: 4%"></span></span>
+            <span class="rating-bars__count">1</span>
+          </li>
+          <li class="rating-bars__row">
+            <span>2 ★</span>
+            <span class="rating-bars__track"><span class="rating-bars__fill" style="--value: 4%"></span></span>
+            <span class="rating-bars__count">1</span>
+          </li>
+          <li class="rating-bars__row">
+            <span>1 ★</span>
+            <span class="rating-bars__track"><span class="rating-bars__fill" style="--value: 0%"></span></span>
+            <span class="rating-bars__count">0</span>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="reviews__list">
+      <li>
+        <article class="review">
+          <div class="review__head">
+            <span class="review__avatar" aria-hidden="true">А</span>
+            <div class="review__who">
+              <h3 class="review__author">Анна К.</h3>
+              <p class="review__meta">
+                <time datetime="2026-09-28">28 сентября 2026</time> ·
+                <span class="review__verified">Проверенная покупка</span>
+              </p>
+            </div>
+            <p class="review__rating">
+              <span class="rating" style="--rating: 5" aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Оценка 5 из 5</span>
+            </p>
+          </div>
+          <p class="review__text">Заказывала на пробу, отправили в день заявки. Упаковка аккуратная, инструкция понятная. Рекомендую.</p>
+        <dl class="review__facts">
+          <div><dt>Достоинства:</dt> <dd>быстрая отправка, аккуратная упаковка</dd></div>
+          <div><dt>Недостатки:</dt> <dd>не нашла</dd></div>
+        </dl>
+        </article>
+      </li>
+      <li>
+        <article class="review">
+          <div class="review__head">
+            <span class="review__avatar" aria-hidden="true">Д</span>
+            <div class="review__who">
+              <h3 class="review__author">Дмитрий С.</h3>
+              <p class="review__meta">
+                <time datetime="2026-09-19">19 сентября 2026</time> ·
+                <span class="review__verified">Проверенная покупка</span>
+              </p>
+            </div>
+            <p class="review__rating">
+              <span class="rating" style="--rating: 5" aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Оценка 5 из 5</span>
+            </p>
+          </div>
+          <p class="review__text">Всё соответствует описанию. Менеджер ответил на вопросы по комплектации меньше чем за час.</p>
+        <dl class="review__facts">
+          <div><dt>Достоинства:</dt> <dd>соответствует описанию, быстрая поддержка</dd></div>
+        </dl>
+        </article>
+      </li>
+      <li>
+        <article class="review">
+          <div class="review__head">
+            <span class="review__avatar" aria-hidden="true">М</span>
+            <div class="review__who">
+              <h3 class="review__author">Мария Л.</h3>
+              <p class="review__meta">
+                <time datetime="2026-09-07">7 сентября 2026</time> ·
+                <span class="review__verified">Проверенная покупка</span>
+              </p>
+            </div>
+            <p class="review__rating">
+              <span class="rating" style="--rating: 4" aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Оценка 4 из 5</span>
+            </p>
+          </div>
+          <p class="review__text">Хороший набор за свою цену. Хотелось бы чуть больше материалов в комплекте, но в целом осталась довольна.</p>
+        <dl class="review__facts">
+          <div><dt>Достоинства:</dt> <dd>цена, качество упаковки</dd></div>
+          <div><dt>Недостатки:</dt> <dd>небольшая комплектация</dd></div>
+        </dl>
+        </article>
+      </li>
+      </ul>
+
+      <details class="reviews__more">
+        <summary class="button button--secondary">
+          <span class="reviews__more-show">Показать ещё отзывы</span>
+          <span class="reviews__more-hide">Скрыть дополнительные отзывы</span>
+        </summary>
+        <ul class="reviews__list">
+      <li>
+        <article class="review">
+          <div class="review__head">
+            <span class="review__avatar" aria-hidden="true">И</span>
+            <div class="review__who">
+              <h3 class="review__author">Игорь П.</h3>
+              <p class="review__meta">
+                <time datetime="2026-08-25">25 августа 2026</time> ·
+                <span class="review__verified">Проверенная покупка</span>
+              </p>
+            </div>
+            <p class="review__rating">
+              <span class="rating" style="--rating: 5" aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Оценка 5 из 5</span>
+            </p>
+          </div>
+          <p class="review__text">Брал для практики, всё понятно и удобно. Через неделю заказал второй набор.</p>
+        </article>
+      </li>
+      <li>
+        <article class="review">
+          <div class="review__head">
+            <span class="review__avatar" aria-hidden="true">Е</span>
+            <div class="review__who">
+              <h3 class="review__author">Елена В.</h3>
+              <p class="review__meta">
+                <time datetime="2026-08-11">11 августа 2026</time> ·
+                <span class="review__verified">Проверенная покупка</span>
+              </p>
+            </div>
+            <p class="review__rating">
+              <span class="rating" style="--rating: 3" aria-hidden="true">★★★★★</span>
+              <span class="visually-hidden">Оценка 3 из 5</span>
+            </p>
+          </div>
+          <p class="review__text">Товар нормальный, но доставка заняла чуть дольше, чем я ожидала. Поддержка помогла отследить заказ.</p>
+        <dl class="review__facts">
+          <div><dt>Недостатки:</dt> <dd>срок доставки</dd></div>
+        </dl>
+        </article>
+      </li>
+        </ul>
+      </details>
+
+      <details class="review-form">
+        <summary>Написать отзыв</summary>
+
+        <div class="review-form__body">
+          <form id="review-form" action="#" method="post" novalidate>
+            <div class="form-field" data-field>
+              <label for="review-name">Имя <span class="form-field__required" aria-hidden="true">*</span></label>
+              <input
+                id="review-name"
+                name="name"
+                type="text"
+                placeholder="Как вас зовут"
+                minlength="2"
+                autocomplete="given-name"
+                aria-describedby="review-name-error"
+                required
+              >
+              <p class="form-field__error" id="review-name-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field form-field--rating" data-field>
+              <fieldset class="star-input" aria-describedby="review-rating-error">
+                <legend>Ваша оценка <span class="form-field__required" aria-hidden="true">*</span></legend>
+                <div class="star-input__options">
+                  <input class="star-input__radio" type="radio" name="rating" id="rating-5" value="5" required>
+                  <label class="star-input__label" for="rating-5" title="5 из 5">★<span class="visually-hidden">5 из 5</span></label>
+                  <input class="star-input__radio" type="radio" name="rating" id="rating-4" value="4">
+                  <label class="star-input__label" for="rating-4" title="4 из 5">★<span class="visually-hidden">4 из 5</span></label>
+                  <input class="star-input__radio" type="radio" name="rating" id="rating-3" value="3">
+                  <label class="star-input__label" for="rating-3" title="3 из 5">★<span class="visually-hidden">3 из 5</span></label>
+                  <input class="star-input__radio" type="radio" name="rating" id="rating-2" value="2">
+                  <label class="star-input__label" for="rating-2" title="2 из 5">★<span class="visually-hidden">2 из 5</span></label>
+                  <input class="star-input__radio" type="radio" name="rating" id="rating-1" value="1">
+                  <label class="star-input__label" for="rating-1" title="1 из 5">★<span class="visually-hidden">1 из 5</span></label>
+                </div>
+              </fieldset>
+              <p class="form-field__error" id="review-rating-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field" data-field>
+              <label for="review-text">Отзыв <span class="form-field__required" aria-hidden="true">*</span></label>
+              <textarea
+                id="review-text"
+                name="text"
+                rows="4"
+                minlength="10"
+                maxlength="1000"
+                placeholder="Расскажите, что понравилось и что можно улучшить"
+                aria-describedby="review-text-error"
+                required
+              ></textarea>
+              <p class="form-field__error" id="review-text-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field form-field--checkbox" data-field>
+              <label>
+                <input
+                  id="review-agreement"
+                  name="agreement"
+                  type="checkbox"
+                  aria-describedby="review-agreement-error"
+                  required
+                >
+                Я согласен на обработку данных <span class="form-field__required" aria-hidden="true">*</span>
+              </label>
+              <p class="form-field__error" id="review-agreement-error" aria-live="polite"></p>
+            </div>
+
+            <button class="button" type="submit">Отправить отзыв</button>
+
+            <p class="success-message" id="review-success" role="status" hidden>
+              Спасибо! Отзыв отправлен на модерацию.
+            </p>
+          </form>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <div class="order-dialog__inner">
+      <div class="order-dialog__head">
+        <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+        <button class="order-dialog__close" type="button" data-close-dialog aria-label="Закрыть окно">&times;</button>
+      </div>
+
+      <p class="order-dialog__product">
+        <span>Товар:</span>
+        <strong id="order-product-name">—</strong>
+        <span id="order-product-price"></span>
+      </p>
+
+      <form class="order-form" id="order-form" action="#" method="post" novalidate>
+        <input id="selected-product" name="selected-product" type="hidden">
+
+        <div class="form-field" data-field>
+          <label for="order-name">Имя <span class="form-field__required" aria-hidden="true">*</span></label>
+          <input
+            id="order-name"
+            name="name"
+            type="text"
+            placeholder="Введите ваше имя"
+            minlength="2"
+            autocomplete="given-name"
+            aria-describedby="order-name-error"
+            autofocus
+            required
+          >
+          <p class="form-field__error" id="order-name-error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field" data-field>
+          <label for="order-email">E-mail <span class="form-field__required" aria-hidden="true">*</span></label>
+          <input
+            id="order-email"
+            name="email"
+            type="email"
+            placeholder="example@mail.ru"
+            autocomplete="email"
+            aria-describedby="order-email-error"
+            required
+          >
+          <p class="form-field__error" id="order-email-error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field" data-field>
+          <label for="order-phone">Телефон <span class="form-field__required" aria-hidden="true">*</span></label>
+          <input
+            id="order-phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="+7 (900) 000-00-00"
+            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            data-pattern-message="Введите номер полностью: +7 (900) 000-00-00"
+            autocomplete="tel"
+            aria-describedby="order-phone-hint order-phone-error"
+            required
+          >
+          <small id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
+          <p class="form-field__error" id="order-phone-error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field" data-field>
+          <label for="order-date">Дата связи</label>
+          <input
+            id="order-date"
+            name="date"
+            type="date"
+            aria-describedby="order-date-error"
+          >
+          <p class="form-field__error" id="order-date-error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field" data-field>
+          <label for="order-topic">Тема заявки <span class="form-field__required" aria-hidden="true">*</span></label>
+          <select id="order-topic" name="topic" aria-describedby="order-topic-error" required>
+            <option value="">Выберите тему</option>
+            <option value="product">Заказ товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+          <p class="form-field__error" id="order-topic-error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field" data-field>
+          <label for="order-comment">Комментарий</label>
+          <textarea
+            id="order-comment"
+            name="comment"
+            rows="3"
+            placeholder="Укажите дополнительную информацию"
+          ></textarea>
+        </div>
+
+        <div class="form-field form-field--checkbox" data-field>
+          <label>
+            <input
+              id="order-agreement"
+              name="agreement"
+              type="checkbox"
+              aria-describedby="order-agreement-error"
+              required
+            >
+            Я согласен на обработку данных <span class="form-field__required" aria-hidden="true">*</span>
+          </label>
+          <p class="form-field__error" id="order-agreement-error" aria-live="polite"></p>
+        </div>
+
+        <p class="order-dialog__note"><span class="form-field__required" aria-hidden="true">*</span> — обязательные поля</p>
+
+        <div class="form-actions">
+          <button class="button button--secondary" type="button" data-close-dialog>Отмена</button>
+          <button class="button" type="submit">Отправить заявку</button>
+        </div>
+      </form>
+
+      <div class="order-dialog__success" id="order-success" role="status" hidden>
+        <p class="order-dialog__success-icon" aria-hidden="true">&#10003;</p>
+        <h3 class="order-dialog__success-title">Заявка отправлена!</h3>
+        <p id="order-success-text">Мы свяжемся с вами в ближайшее рабочее время.</p>
+        <button class="button" type="button" data-close-dialog>Закрыть</button>
+      </div>
+    </div>
+  </dialog>
+
+  <a class="to-top" href="#top" aria-label="Наверх" title="Наверх">
+    <svg class="to-top__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </a>
+
+</body>
+</html>

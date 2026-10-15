@@ -65,30 +65,97 @@
 
       <div class="products-grid">
         <article class="product-card">
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
+          <span class="product-card__badge product-card__badge--hit">Хит</span>
+
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-1.svg" width="800" height="600" loading="lazy" alt="Товар 1: учебный набор в синей коробке">
+          </div>
+
+          <p class="product-card__category">Учебные наборы</p>
+          <h3 class="product-card__title"><a href="product.html">Товар 1</a></h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 4.6" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>4,6<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(24 отзыва)</span>
+          </p>
+
+          <p class="product-card__description">Базовый учебный набор: удобная упаковка и понятная инструкция.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>1000 руб.</strong>
+          </p>
+          <p class="stock stock--in">В наличии</p>
+
+          <div class="product-card__actions">
+            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <button class="button product-card__button" type="button" data-product="Товар 1" data-price="1000 руб.">
+              Заказать
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card product-card--discount">
+          <span class="product-card__badge product-card__badge--sale">Скидка −21%</span>
+
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-2.svg" width="800" height="600" loading="lazy" alt="Товар 2: расширенный набор в фиолетовой коробке">
+          </div>
+
+          <p class="product-card__category">Учебные наборы</p>
+          <h3 class="product-card__title"><a href="product.html">Товар 2</a></h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 4.2" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>4,2<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(11 отзывов)</span>
+          </p>
+
+          <p class="product-card__description">Расширенный набор с дополнительными материалами для практики.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>1500 руб.</strong>
+            <s class="product-card__price-old"><span class="visually-hidden">Старая цена: </span>1900 руб.</s>
+          </p>
+          <p class="stock stock--in">В наличии</p>
+
+          <div class="product-card__actions">
+            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <button class="button product-card__button" type="button" data-product="Товар 2" data-price="1500 руб.">
+              Заказать
+            </button>
+          </div>
         </article>
 
         <article class="product-card">
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1500 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 2">
-            Заказать
-          </button>
-        </article>
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
 
-        <article class="product-card">
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 2000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 3">
-            Заказать
-          </button>
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-3.svg" width="800" height="600" loading="lazy" alt="Товар 3: новый набор в зелёной коробке">
+          </div>
+
+          <p class="product-card__category">Новинки</p>
+          <h3 class="product-card__title"><a href="product.html">Товар 3</a></h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 5.0" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>5,0<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(3 отзыва)</span>
+          </p>
+
+          <p class="product-card__description">Новая версия набора с обновлённой комплектацией.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>2000 руб.</strong>
+          </p>
+          <p class="stock stock--order">Под заказ, 3–5 дней</p>
+
+          <div class="product-card__actions">
+            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <button class="button product-card__button" type="button" data-product="Товар 3" data-price="2000 руб.">
+              Заказать
+            </button>
+          </div>
         </article>
       </div>
     </section>
@@ -118,102 +185,137 @@
   </footer>
 
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-    <h2 id="order-dialog-title">Оформление заявки</h2>
-
-    <form class="order-form" id="order-form" action="#" method="post" novalidate>
-      <input id="selected-product" name="selected-product" type="hidden">
-
-      <div class="form-field">
-        <label for="order-name">Имя</label>
-        <input
-          id="order-name"
-          name="name"
-          type="text"
-          placeholder="Введите ваше имя"
-          minlength="2"
-          autocomplete="given-name"
-          required
-        >
+    <div class="order-dialog__inner">
+      <div class="order-dialog__head">
+        <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+        <button class="order-dialog__close" type="button" data-close-dialog aria-label="Закрыть окно">&times;</button>
       </div>
 
-      <div class="form-field">
-        <label for="order-email">E-mail</label>
-        <input
-          id="order-email"
-          name="email"
-          type="email"
-          placeholder="example@mail.ru"
-          autocomplete="email"
-          required
-        >
-      </div>
+      <p class="order-dialog__product">
+        <span>Товар:</span>
+        <strong id="order-product-name">—</strong>
+        <span id="order-product-price"></span>
+      </p>
 
-      <div class="form-field">
-        <label for="order-phone">Телефон</label>
-        <input
-          id="order-phone"
-          name="phone"
-          type="tel"
-          inputmode="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-          required
-        >
-        <small>Формат: +7 (900) 000-00-00</small>
-      </div>
+      <form class="order-form" id="order-form" action="#" method="post" novalidate>
+        <input id="selected-product" name="selected-product" type="hidden">
 
-      <div class="form-field">
-        <label for="order-date">Дата связи</label>
-        <input
-          id="order-date"
-          name="date"
-          type="date"
-        >
-      </div>
-
-      <div class="form-field">
-        <label for="order-topic">Тема заявки</label>
-        <select id="order-topic" name="topic" required>
-          <option value="">Выберите тему</option>
-          <option value="product">Заказ товара</option>
-          <option value="consultation">Консультация</option>
-          <option value="delivery">Доставка</option>
-        </select>
-      </div>
-
-      <div class="form-field">
-        <label for="order-comment">Комментарий</label>
-        <textarea
-          id="order-comment"
-          name="comment"
-          rows="4"
-          placeholder="Укажите дополнительную информацию"
-        ></textarea>
-      </div>
-
-      <div class="form-field form-field--checkbox">
-        <label>
+        <div class="form-field" data-field>
+          <label for="order-name">Имя <span class="form-field__required" aria-hidden="true">*</span></label>
           <input
-            id="order-agreement"
-            name="agreement"
-            type="checkbox"
+            id="order-name"
+            name="name"
+            type="text"
+            placeholder="Введите ваше имя"
+            minlength="2"
+            autocomplete="given-name"
+            aria-describedby="order-name-error"
+            autofocus
             required
           >
-          Я согласен на обработку данных
-        </label>
-      </div>
+          <p class="form-field__error" id="order-name-error" aria-live="polite"></p>
+        </div>
 
-      <div class="form-actions">
-        <button type="button" id="close-order-dialog">Закрыть</button>
-        <button type="submit">Отправить заявку</button>
+        <div class="form-field" data-field>
+          <label for="order-email">E-mail <span class="form-field__required" aria-hidden="true">*</span></label>
+          <input
+            id="order-email"
+            name="email"
+            type="email"
+            placeholder="example@mail.ru"
+            autocomplete="email"
+            aria-describedby="order-email-error"
+            required
+          >
+          <p class="form-field__error" id="order-email-error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field" data-field>
+          <label for="order-phone">Телефон <span class="form-field__required" aria-hidden="true">*</span></label>
+          <input
+            id="order-phone"
+            name="phone"
+            type="tel"
+            inputmode="tel"
+            placeholder="+7 (900) 000-00-00"
+            pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+            data-pattern-message="Введите номер полностью: +7 (900) 000-00-00"
+            autocomplete="tel"
+            aria-describedby="order-phone-hint order-phone-error"
+            required
+          >
+          <small id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
+          <p class="form-field__error" id="order-phone-error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field" data-field>
+          <label for="order-date">Дата связи</label>
+          <input
+            id="order-date"
+            name="date"
+            type="date"
+            aria-describedby="order-date-error"
+          >
+          <p class="form-field__error" id="order-date-error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field" data-field>
+          <label for="order-topic">Тема заявки <span class="form-field__required" aria-hidden="true">*</span></label>
+          <select id="order-topic" name="topic" aria-describedby="order-topic-error" required>
+            <option value="">Выберите тему</option>
+            <option value="product">Заказ товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+          <p class="form-field__error" id="order-topic-error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field" data-field>
+          <label for="order-comment">Комментарий</label>
+          <textarea
+            id="order-comment"
+            name="comment"
+            rows="3"
+            placeholder="Укажите дополнительную информацию"
+          ></textarea>
+        </div>
+
+        <div class="form-field form-field--checkbox" data-field>
+          <label>
+            <input
+              id="order-agreement"
+              name="agreement"
+              type="checkbox"
+              aria-describedby="order-agreement-error"
+              required
+            >
+            Я согласен на обработку данных <span class="form-field__required" aria-hidden="true">*</span>
+          </label>
+          <p class="form-field__error" id="order-agreement-error" aria-live="polite"></p>
+        </div>
+
+        <p class="order-dialog__note"><span class="form-field__required" aria-hidden="true">*</span> — обязательные поля</p>
+
+        <div class="form-actions">
+          <button class="button button--secondary" type="button" data-close-dialog>Отмена</button>
+          <button class="button" type="submit">Отправить заявку</button>
+        </div>
+      </form>
+
+      <div class="order-dialog__success" id="order-success" role="status" hidden>
+        <p class="order-dialog__success-icon" aria-hidden="true">&#10003;</p>
+        <h3 class="order-dialog__success-title">Заявка отправлена!</h3>
+        <p id="order-success-text">Мы свяжемся с вами в ближайшее рабочее время.</p>
+        <button class="button" type="button" data-close-dialog>Закрыть</button>
       </div>
-    </form>
+    </div>
   </dialog>
 
-  <p class="success-message" id="success-message" hidden>
-    Форма успешно отправлена!
-  </p>
-
+  <a class="to-top" href="#top" aria-label="Наверх" title="Наверх">
+    <svg class="to-top__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </a>
 
 </body>
 </html>

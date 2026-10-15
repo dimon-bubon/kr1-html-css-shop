@@ -6,6 +6,7 @@
   <meta name="description" content="Каталог товаров учебного интернет-магазина.">
   <title>Каталог товаров — Учебный интернет-магазин</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
   <meta property="og:type" content="website">
   <meta property="og:title" content="Учебный интернет-магазин">
   <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
@@ -78,24 +79,88 @@
 
         <div class="products-grid">
         <article class="product-card">
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
-          <a class="button" href="index.html#popular">Подробнее</a>
+          <span class="product-card__badge product-card__badge--hit">Хит</span>
+
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-1.svg" width="800" height="600" loading="lazy" alt="Товар 1: учебный набор в синей коробке">
+          </div>
+
+          <p class="product-card__category">Учебные наборы</p>
+          <h3 class="product-card__title"><a href="product.html">Товар 1</a></h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 4.6" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>4,6<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(24 отзыва)</span>
+          </p>
+
+          <p class="product-card__description">Базовый учебный набор: удобная упаковка и понятная инструкция.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>1000 руб.</strong>
+          </p>
+          <p class="stock stock--in">В наличии</p>
+
+          <div class="product-card__actions">
+            <a class="button" href="product.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="product-card product-card--discount">
+          <span class="product-card__badge product-card__badge--sale">Скидка −21%</span>
+
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-2.svg" width="800" height="600" loading="lazy" alt="Товар 2: расширенный набор в фиолетовой коробке">
+          </div>
+
+          <p class="product-card__category">Учебные наборы</p>
+          <h3 class="product-card__title"><a href="product.html">Товар 2</a></h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 4.2" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>4,2<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(11 отзывов)</span>
+          </p>
+
+          <p class="product-card__description">Расширенный набор с дополнительными материалами для практики.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>1500 руб.</strong>
+            <s class="product-card__price-old"><span class="visually-hidden">Старая цена: </span>1900 руб.</s>
+          </p>
+          <p class="stock stock--in">В наличии</p>
+
+          <div class="product-card__actions">
+            <a class="button" href="product.html">Подробнее</a>
+          </div>
         </article>
 
         <article class="product-card">
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1500 руб.</p>
-          <a class="button" href="index.html#popular">Подробнее</a>
-        </article>
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
 
-        <article class="product-card">
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 2000 руб.</p>
-          <a class="button" href="index.html#popular">Подробнее</a>
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-3.svg" width="800" height="600" loading="lazy" alt="Товар 3: новый набор в зелёной коробке">
+          </div>
+
+          <p class="product-card__category">Новинки</p>
+          <h3 class="product-card__title"><a href="product.html">Товар 3</a></h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 5.0" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>5,0<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(3 отзыва)</span>
+          </p>
+
+          <p class="product-card__description">Новая версия набора с обновлённой комплектацией.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>2000 руб.</strong>
+          </p>
+          <p class="stock stock--order">Под заказ, 3–5 дней</p>
+
+          <div class="product-card__actions">
+            <a class="button" href="product.html">Подробнее</a>
+          </div>
         </article>
         </div>
       </section>
@@ -106,5 +171,11 @@
     <p>&copy; 2026 Учебный проект. Все права защищены.</p>
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
+
+  <a class="to-top" href="#top" aria-label="Наверх" title="Наверх">
+    <svg class="to-top__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </a>
 </body>
 </html>
