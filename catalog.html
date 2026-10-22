@@ -13,84 +13,71 @@
   <meta property="og:image" content="https://dimon-bubon.github.io/kr1-html-css-shop/images/preview.jpg">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+  <header>
+    <div class="site-header">
+      <a class="site-logo" href="index.html">ShopProject</a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html">Главная</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">Контакты</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
-          </li>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.html#advantages">Преимущества</a></li>
+          <li><a href="index.html#popular">Популярные товары</a></li>
+          <li><a href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="site-main">
+  <main>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
-      <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Каталог</span>
+      <a href="index.html">Главная</a>
+      <span>Каталог</span>
     </nav>
 
     <div class="catalog-layout">
-      <aside class="catalog-filters catalog-layout__filters">
-        <h2 class="catalog-filters__title">Фильтры</h2>
+    <aside class="catalog-filters">
+        <h2>Фильтры</h2>
 
-        <form class="catalog-filters__form" action="#" method="get">
-          <fieldset class="catalog-filters__group">
-            <legend class="catalog-filters__legend">Категория</legend>
+        <form class="filters-form" action="#" method="get">
+        <fieldset>
+            <legend>Категория</legend>
 
-            <label class="catalog-filters__label">
-              <input type="checkbox" name="category" value="all">
-              Все товары
+            <label>
+            <input type="checkbox" name="category" value="all">
+            Все товары
             </label>
 
-            <label class="catalog-filters__label">
-              <input type="checkbox" name="category" value="popular">
-              Популярные
+            <label>
+            <input type="checkbox" name="category" value="popular">
+            Популярные
             </label>
 
-            <label class="catalog-filters__label">
-              <input type="checkbox" name="category" value="new">
-              Новинки
+            <label>
+            <input type="checkbox" name="category" value="new">
+            Новинки
             </label>
-          </fieldset>
+        </fieldset>
 
-          <fieldset class="catalog-filters__group">
-            <legend class="catalog-filters__legend">Цена</legend>
+        <fieldset>
+            <legend>Цена</legend>
 
-            <label class="catalog-filters__label" for="price-from">От</label>
-            <input class="catalog-filters__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
+            <label for="price-from">От</label>
+            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
 
-            <label class="catalog-filters__label" for="price-to">До</label>
-            <input class="catalog-filters__input" id="price-to" name="price-to" type="number" min="0" placeholder="5000">
-          </fieldset>
+            <label for="price-to">До</label>
+            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+        </fieldset>
 
-          <button class="button button--primary" type="submit">Применить</button>
+        <button class="button" type="submit">Применить</button>
         </form>
-      </aside>
+    </aside>
 
-      <section class="catalog-products catalog-layout__products">
-        <h1 class="catalog-products__title">Список товаров</h1>
+      <section class="catalog-products">
+        <h1>Список товаров</h1>
 
         <div class="products-grid">
-<<<<<<< HEAD
         <article class="product-card">
           <span class="product-card__badge product-card__badge--hit">Хит</span>
 
@@ -175,36 +162,14 @@
             <a class="button" href="product.html">Подробнее</a>
           </div>
         </article>
-=======
-          <article class="product-card">
-            <h3 class="product-card__title">Товар 1</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1000 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
-          </article>
-
-          <article class="product-card">
-            <h3 class="product-card__title">Товар 2</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 1500 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
-          </article>
-
-          <article class="product-card">
-            <h3 class="product-card__title">Товар 3</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">Цена: 2000 руб.</p>
-            <a class="button button--primary product-card__button" href="index.html#popular">Подробнее</a>
-          </article>
->>>>>>> origin/main
         </div>
       </section>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer>
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
 
   <a class="to-top" href="#top" aria-label="Наверх" title="Наверх">

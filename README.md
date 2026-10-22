@@ -81,7 +81,6 @@ GitHub Pages: https://dimon-bubon.github.io/kr1-html-css-shop/
 
 В проекте используются:
 
-<<<<<<< HEAD
 - Flexbox для основного меню;
 - Flexbox для внутренней структуры карточек товаров;
 - CSS Grid для сетки карточек;
@@ -104,7 +103,7 @@ GitHub Pages: https://dimon-bubon.github.io/kr1-html-css-shop/
 3. Заполнить форму — окно показывает «Заявка отправлена».
 4. Открыть `product.html`, переключить фото, раскрыть «Показать ещё отзывы» и «Написать отзыв».
 5. Прокрутить страницу вниз — справа внизу появляется кнопка «Наверх».
-=======
+
 - CSS-переменные в `:root`;
 - единая шкала отступов;
 - переменные для цветов и скруглений;
@@ -163,4 +162,4 @@ GitHub Pages: https://dimon-bubon.github.io/kr1-html-css-shop/
 - классы описывают назначение элемента, а не внешний вид;
 - стили задаются по классам, без вложенных селекторов и без `id`;
 - `id` оставлены только для якорных ссылок и JavaScript (`order-dialog`, `order-form`, `close-order-dialog`, `selected-product`, `success-message`, `popular`, `advantages`, `contacts` и др.).
->>>>>>> origin/main
+
