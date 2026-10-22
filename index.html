@@ -13,71 +13,61 @@
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="site-header__logo" href="index.html">ShopProject</a>
+  <header>
+    <div class="site-header">
+      <a class="site-logo" href="index.html">ShopProject</a>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="index.html">Главная</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="catalog.html">Каталог</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">Контакты</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
-          </li>
+          <li><a href="index.html" aria-current="page">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="about.html">О магазине</a></li>
+          <li><a href="delivery.html">Доставка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.html#advantages">Преимущества</a></li>
+          <li><a href="index.html#popular">Популярные товары</a></li>
+          <li><a href="index.html#faq">Вопросы</a></li>
+          <li><a href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="site-main">
+  <main>
     <section class="hero">
-      <h1 class="hero__title">Учебный интернет-магазин</h1>
-      <p class="hero__text">
+      <h1>Учебный интернет-магазин</h1>
+      <p>
         Это стартовая страница учебного frontend-проекта.
         В дальнейшем на её основе будет разработан многостраничный сайт
         интернет-магазина или каталога услуг.
       </p>
-      <a class="button button--primary hero__button" href="#popular">Перейти к товарам</a>
+      <a class="button" href="#popular">Перейти к товарам</a>
     </section>
 
     <section class="section" id="advantages">
-      <h2 class="section__title">Преимущества</h2>
+      <h2>Преимущества</h2>
 
       <div class="advantages">
         <div class="advantages__item">
-          <h3 class="advantages__title">Быстрая доставка</h3>
-          <p class="advantages__text">Отправляем заказы в день оформления заявки.</p>
+          <h3>Быстрая доставка</h3>
+          <p>Отправляем заказы в день оформления заявки.</p>
         </div>
         <div class="advantages__item">
-          <h3 class="advantages__title">Гарантия качества</h3>
-          <p class="advantages__text">Все учебные товары проходят проверку перед отправкой.</p>
+          <h3>Гарантия качества</h3>
+          <p>Все учебные товары проходят проверку перед отправкой.</p>
         </div>
         <div class="advantages__item">
-          <h3 class="advantages__title">Поддержка</h3>
-          <p class="advantages__text">Отвечаем на вопросы покупателей в течение рабочего дня.</p>
+          <h3>Поддержка</h3>
+          <p>Отвечаем на вопросы покупателей в течение рабочего дня.</p>
         </div>
       </div>
     </section>
 
     <section class="section" id="popular">
-      <h2 class="section__title">Популярные товары</h2>
+      <h2>Популярные товары</h2>
 
       <div class="products-grid">
         <article class="product-card">
-<<<<<<< HEAD
           <span class="product-card__badge product-card__badge--hit">Хит</span>
 
           <div class="product-card__media">
@@ -147,7 +137,7 @@
             <img class="product-card__img" src="images/product-3.svg" width="800" height="600" loading="lazy" alt="Товар 3: новый набор в зелёной коробке">
           </div>
 
-          <p class="product-card__category">Новинки</p>
+          <p class="product-card__category">Учебные наборы</p>
           <h3 class="product-card__title"><a href="product.html">Товар 3</a></h3>
 
           <p class="product-card__rating">
@@ -169,38 +159,110 @@
               Заказать
             </button>
           </div>
-=======
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1000 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
-        </article>
-
-        <article class="product-card">
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 1500 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 2">
-            Заказать
-          </button>
-        </article>
-
-        <article class="product-card">
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">Цена: 2000 руб.</p>
-          <button class="button button--primary product-card__button" type="button" data-product="Товар 3">
-            Заказать
-          </button>
->>>>>>> origin/main
         </article>
       </div>
+
+      <p class="section__more">
+        <a class="button button--secondary" href="catalog.html">Весь каталог — 12 позиций</a>
+      </p>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="faq__layout">
+        <div class="faq__intro">
+          <h2 id="faq-title">Частые вопросы</h2>
+          <p>
+            Собрали ответы на вопросы, которые покупатели задают чаще всего.
+            Не нашли свой — напишите нам.
+          </p>
+          <div class="cta-box__actions">
+            <a class="button" href="contacts.html">Задать вопрос</a>
+            <a class="button button--secondary" href="order.html">Оформить заявку</a>
+          </div>
+        </div>
+
+        <div class="faq__list">
+          <details class="faq__item" name="faq" open>
+            <summary class="faq__question">Как оформить заказ?</summary>
+            <div class="faq__answer">
+              <p>
+                Нажмите «Заказать» на карточке товара или откройте страницу
+                <a href="order.html">оформления заявки</a>: выберите товар или услугу,
+                укажите количество и контакты. Менеджер свяжется с вами и подтвердит заказ.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">Сколько стоит доставка и как быстро приходит заказ?</summary>
+            <div class="faq__answer">
+              <p>
+                Заказы отправляются в день оформления заявки. По Москве курьер привозит заказ
+                за 1–2 рабочих дня, самовывоз бесплатный. Все способы, сроки и цены —
+                на странице <a href="delivery.html">«Доставка и оплата»</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">Как оплатить заказ?</summary>
+            <div class="faq__answer">
+              <p>
+                Оплатить можно при получении или онлайн банковской картой.
+                Организациям доступен безналичный расчёт по счёту.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">Можно ли вернуть товар?</summary>
+            <div class="faq__answer">
+              <p>
+                Да, в течение 14 дней после получения, если товар не использовался
+                и сохранил товарный вид. Напишите на info@example.com — подскажем, как оформить возврат.
+                Условия описаны в разделе <a href="delivery.html#returns">«Возврат и обмен»</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">Что значит «Под заказ»?</summary>
+            <div class="faq__answer">
+              <p>
+                Этого товара сейчас нет на складе. Мы привезём его за 3–5 дней —
+                срок указан на карточке товара.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">Как записаться на консультацию или мастер-класс?</summary>
+            <div class="faq__answer">
+              <p>
+                Услуги собраны в <a href="catalog.html">каталоге</a> в категории «Услуги».
+                Нажмите «Записаться» — менеджер свяжется с вами и согласует удобное время.
+                Занятия проходят онлайн.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">Как связаться с поддержкой?</summary>
+            <div class="faq__answer">
+              <p>
+                Позвоните по телефону +7 (900) 000-00-00 или напишите на info@example.com.
+                Мы отвечаем на вопросы в течение рабочего дня. Все контакты —
+                на странице <a href="contacts.html">«Контакты»</a>.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+
     </section>
 
     <section class="section" id="about">
-      <h2 class="section__title">О проекте</h2>
+      <h2>О проекте</h2>
       <p>
         В рамках данного проекта будет разработан многостраничный сайт
         интернет-магазина или каталога услуг. Проект будет постепенно
@@ -208,9 +270,9 @@
       </p>
     </section>
 
-    <aside class="info-box">
-      <h2 class="info-box__title">Информация для студентов</h2>
-      <p class="info-box__text">
+    <aside class="aside-info">
+      <h2>Информация для студентов</h2>
+      <p>
         На следующих практических занятиях этот проект будет расширяться:
         появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
         БЭМ-структура и адаптивная версия сайта.
@@ -218,13 +280,12 @@
     </aside>
   </main>
 
-  <footer class="site-footer" id="contacts">
-    <p class="site-footer__text">&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer id="contacts">
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
 
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-<<<<<<< HEAD
     <div class="order-dialog__inner">
       <div class="order-dialog__head">
         <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
@@ -251,99 +312,11 @@
             autocomplete="given-name"
             aria-describedby="order-name-error"
             autofocus
-=======
-    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
-
-    <form class="order-form" id="order-form" action="#" method="post" novalidate>
-      <input id="selected-product" name="selected-product" type="hidden">
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-name">Имя</label>
-        <input
-          class="order-form__input"
-          id="order-name"
-          name="name"
-          type="text"
-          placeholder="Введите ваше имя"
-          minlength="2"
-          autocomplete="given-name"
-          required
-        >
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-email">E-mail</label>
-        <input
-          class="order-form__input"
-          id="order-email"
-          name="email"
-          type="email"
-          placeholder="example@mail.ru"
-          autocomplete="email"
-          required
-        >
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-phone">Телефон</label>
-        <input
-          class="order-form__input"
-          id="order-phone"
-          name="phone"
-          type="tel"
-          inputmode="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-          required
-        >
-        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-date">Дата связи</label>
-        <input
-          class="order-form__input"
-          id="order-date"
-          name="date"
-          type="date"
-        >
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-topic">Тема заявки</label>
-        <select class="order-form__select" id="order-topic" name="topic" required>
-          <option value="">Выберите тему</option>
-          <option value="product">Заказ товара</option>
-          <option value="consultation">Консультация</option>
-          <option value="delivery">Доставка</option>
-        </select>
-      </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-comment">Комментарий</label>
-        <textarea
-          class="order-form__textarea"
-          id="order-comment"
-          name="comment"
-          rows="4"
-          placeholder="Укажите дополнительную информацию"
-        ></textarea>
-      </div>
-
-      <div class="order-form__field order-form__field--checkbox">
-        <label class="order-form__label">
-          <input
-            class="order-form__checkbox"
-            id="order-agreement"
-            name="agreement"
-            type="checkbox"
->>>>>>> origin/main
             required
           >
           <p class="form-field__error" id="order-name-error" aria-live="polite"></p>
         </div>
 
-<<<<<<< HEAD
         <div class="form-field" data-field>
           <label for="order-email">E-mail <span class="form-field__required" aria-hidden="true">*</span></label>
           <input
@@ -435,30 +408,15 @@
         <h3 class="order-dialog__success-title">Заявка отправлена!</h3>
         <p id="order-success-text">Мы свяжемся с вами в ближайшее рабочее время.</p>
         <button class="button" type="button" data-close-dialog>Закрыть</button>
-=======
-      <div class="order-form__actions">
-        <button class="button button--secondary" type="button" id="close-order-dialog">
-          Закрыть
-        </button>
-        <button class="button button--primary" type="submit">
-          Отправить заявку
-        </button>
->>>>>>> origin/main
       </div>
     </div>
   </dialog>
 
-<<<<<<< HEAD
   <a class="to-top" href="#top" aria-label="Наверх" title="Наверх">
     <svg class="to-top__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
       <path d="M12 19V5M5 12l7-7 7 7"/>
     </svg>
   </a>
 
-=======
-  <p class="success-message" id="success-message" hidden>
-    Форма успешно отправлена!
-  </p>
->>>>>>> origin/main
 </body>
 </html>
