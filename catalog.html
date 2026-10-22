@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Каталог товаров учебного интернет-магазина.">
-  <title>Каталог товаров — Учебный интернет-магазин</title>
+  <meta name="description" content="Каталог товаров и услуг учебного интернет-магазина: наборы, аксессуары, материалы и онлайн-услуги с фильтрами по категории и цене.">
+  <title>Каталог товаров и услуг — Учебный интернет-магазин</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
+  <meta property="og:title" content="Каталог товаров и услуг — Учебный интернет-магазин">
   <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
   <meta property="og:image" content="https://dimon-bubon.github.io/kr1-html-css-shop/images/preview.jpg">
 </head>
@@ -20,10 +20,13 @@
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li><a href="index.html">Главная</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="catalog.html" aria-current="page">Каталог</a></li>
+          <li><a href="about.html">О магазине</a></li>
+          <li><a href="delivery.html">Доставка</a></li>
           <li><a href="contacts.html">Контакты</a></li>
           <li><a href="index.html#advantages">Преимущества</a></li>
           <li><a href="index.html#popular">Популярные товары</a></li>
+          <li><a href="index.html#faq">Вопросы</a></li>
           <li><a href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
@@ -33,52 +36,78 @@
   <main>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a href="index.html">Главная</a>
-      <span>Каталог</span>
+      <span aria-current="page">Каталог</span>
     </nav>
 
     <div class="catalog-layout">
-    <aside class="catalog-filters">
+      <aside class="catalog-filters">
         <h2>Фильтры</h2>
 
         <form class="filters-form" action="#" method="get">
-        <fieldset>
+          <fieldset>
             <legend>Категория</legend>
 
-            <label>
-            <input type="checkbox" name="category" value="all">
-            Все товары
-            </label>
+          <label class="filters-form__option">
+            <input type="radio" name="category" id="cat-all" value="all" checked>
+            Все товары и услуги
+            <span class="filters-form__count">12</span>
+          </label>
+          <label class="filters-form__option">
+            <input type="radio" name="category" id="cat-sets" value="sets">
+            Учебные наборы
+            <span class="filters-form__count">3</span>
+          </label>
+          <label class="filters-form__option">
+            <input type="radio" name="category" id="cat-accessories" value="accessories">
+            Аксессуары
+            <span class="filters-form__count">3</span>
+          </label>
+          <label class="filters-form__option">
+            <input type="radio" name="category" id="cat-materials" value="materials">
+            Материалы
+            <span class="filters-form__count">3</span>
+          </label>
+          <label class="filters-form__option">
+            <input type="radio" name="category" id="cat-services" value="services">
+            Услуги
+            <span class="filters-form__count">3</span>
+          </label>
+          </fieldset>
 
-            <label>
-            <input type="checkbox" name="category" value="popular">
-            Популярные
-            </label>
-
-            <label>
-            <input type="checkbox" name="category" value="new">
-            Новинки
-            </label>
-        </fieldset>
-
-        <fieldset>
+          <fieldset>
             <legend>Цена</legend>
 
-            <label for="price-from">От</label>
-            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
+          <label class="filters-form__option">
+            <input type="radio" name="price" id="price-all" value="all" checked>
+            Любая цена
+            <span class="filters-form__count">12</span>
+          </label>
+          <label class="filters-form__option">
+            <input type="radio" name="price" id="price-low" value="low">
+            до 1000 руб.
+            <span class="filters-form__count">4</span>
+          </label>
+          <label class="filters-form__option">
+            <input type="radio" name="price" id="price-mid" value="mid">
+            1001–1999 руб.
+            <span class="filters-form__count">4</span>
+          </label>
+          <label class="filters-form__option">
+            <input type="radio" name="price" id="price-high" value="high">
+            от 2000 руб.
+            <span class="filters-form__count">4</span>
+          </label>
+          </fieldset>
 
-            <label for="price-to">До</label>
-            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
-        </fieldset>
-
-        <button class="button" type="submit">Применить</button>
+          <button class="button button--secondary" type="reset">Сбросить фильтры</button>
         </form>
-    </aside>
+      </aside>
 
       <section class="catalog-products">
-        <h1>Список товаров</h1>
+        <h1>Каталог товаров и услуг</h1>
 
         <div class="products-grid">
-        <article class="product-card">
+        <article class="product-card" data-category="sets" data-price-range="low">
           <span class="product-card__badge product-card__badge--hit">Хит</span>
 
           <div class="product-card__media">
@@ -102,11 +131,12 @@
           <p class="stock stock--in">В наличии</p>
 
           <div class="product-card__actions">
-            <a class="button" href="product.html">Подробнее</a>
+            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <a class="button" href="order.html?product=tovar-1">Заказать</a>
           </div>
         </article>
 
-        <article class="product-card product-card--discount">
+        <article class="product-card product-card--discount" data-category="sets" data-price-range="mid">
           <span class="product-card__badge product-card__badge--sale">Скидка −21%</span>
 
           <div class="product-card__media">
@@ -131,18 +161,19 @@
           <p class="stock stock--in">В наличии</p>
 
           <div class="product-card__actions">
-            <a class="button" href="product.html">Подробнее</a>
+            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <a class="button" href="order.html?product=tovar-2">Заказать</a>
           </div>
         </article>
 
-        <article class="product-card">
+        <article class="product-card" data-category="sets" data-price-range="high">
           <span class="product-card__badge product-card__badge--new">Новинка</span>
 
           <div class="product-card__media">
             <img class="product-card__img" src="images/product-3.svg" width="800" height="600" loading="lazy" alt="Товар 3: новый набор в зелёной коробке">
           </div>
 
-          <p class="product-card__category">Новинки</p>
+          <p class="product-card__category">Учебные наборы</p>
           <h3 class="product-card__title"><a href="product.html">Товар 3</a></h3>
 
           <p class="product-card__rating">
@@ -159,10 +190,256 @@
           <p class="stock stock--order">Под заказ, 3–5 дней</p>
 
           <div class="product-card__actions">
-            <a class="button" href="product.html">Подробнее</a>
+            <a class="button button--secondary" href="product.html">Подробнее</a>
+            <a class="button" href="order.html?product=tovar-3">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="accessories" data-price-range="low">
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-4.svg" width="800" height="600" loading="lazy" alt="Чехол для набора с ручкой и застёжкой">
+          </div>
+
+          <p class="product-card__category">Аксессуары</p>
+          <h3 class="product-card__title">Чехол для набора</h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 4.5" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>4,5<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(18 отзывов)</span>
+          </p>
+
+          <p class="product-card__description">Плотный чехол защищает коробку при хранении и перевозке.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>600 руб.</strong>
+          </p>
+          <p class="stock stock--in">В наличии</p>
+
+          <div class="product-card__actions">
+            <a class="button" href="order.html?product=chekhol">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="accessories" data-price-range="mid">
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-5.svg" width="800" height="600" loading="lazy" alt="Оранжевая подставка для набора">
+          </div>
+
+          <p class="product-card__category">Аксессуары</p>
+          <h3 class="product-card__title">Подставка для набора</h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 4.4" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>4,4<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(9 отзывов)</span>
+          </p>
+
+          <p class="product-card__description">Устойчивая подставка для удобной работы с набором за столом.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>1200 руб.</strong>
+          </p>
+          <p class="stock stock--in">В наличии</p>
+
+          <div class="product-card__actions">
+            <a class="button" href="order.html?product=podstavka">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="accessories" data-price-range="high">
+          <span class="product-card__badge product-card__badge--hit">Хит</span>
+
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-6.svg" width="800" height="600" loading="lazy" alt="Кейс-органайзер с несколькими отделениями">
+          </div>
+
+          <p class="product-card__category">Аксессуары</p>
+          <h3 class="product-card__title">Органайзер-кейс</h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 4.8" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>4,8<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(31 отзыв)</span>
+          </p>
+
+          <p class="product-card__description">Кейс с отделениями: все детали набора всегда под рукой.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>2400 руб.</strong>
+          </p>
+          <p class="stock stock--in">В наличии</p>
+
+          <div class="product-card__actions">
+            <a class="button" href="order.html?product=organayzer">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="materials" data-price-range="low">
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-7.svg" width="800" height="600" loading="lazy" alt="Стопка листов со сменными элементами">
+          </div>
+
+          <p class="product-card__category">Материалы</p>
+          <h3 class="product-card__title">Сменные элементы</h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 4.3" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>4,3<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(14 отзывов)</span>
+          </p>
+
+          <p class="product-card__description">Запасные элементы для наборов: пополните комплектацию без покупки нового набора.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>450 руб.</strong>
+          </p>
+          <p class="stock stock--in">В наличии</p>
+
+          <div class="product-card__actions">
+            <a class="button" href="order.html?product=elementy">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card product-card--discount" data-category="materials" data-price-range="mid">
+          <span class="product-card__badge product-card__badge--sale">Скидка −18%</span>
+
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-8.svg" width="800" height="600" loading="lazy" alt="Стопка зелёных учебных материалов">
+          </div>
+
+          <p class="product-card__category">Материалы</p>
+          <h3 class="product-card__title">Комплект материалов</h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 4.6" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>4,6<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(12 отзывов)</span>
+          </p>
+
+          <p class="product-card__description">Тематические материалы и задания для самостоятельной практики.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>1800 руб.</strong>
+            <s class="product-card__price-old"><span class="visually-hidden">Старая цена: </span>2200 руб.</s>
+          </p>
+          <p class="stock stock--in">В наличии</p>
+
+          <div class="product-card__actions">
+            <a class="button" href="order.html?product=komplekt">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="materials" data-price-range="high">
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-9.svg" width="800" height="600" loading="lazy" alt="Большая стопка розовых учебных материалов">
+          </div>
+
+          <p class="product-card__category">Материалы</p>
+          <h3 class="product-card__title">Расширенный комплект материалов</h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 4.7" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>4,7<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(6 отзывов)</span>
+          </p>
+
+          <p class="product-card__description">Полная библиотека материалов с повышенной сложностью и примерами.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>2900 руб.</strong>
+          </p>
+          <p class="stock stock--order">Под заказ, 3–5 дней</p>
+
+          <div class="product-card__actions">
+            <a class="button" href="order.html?product=komplekt-plus">Заказать</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="services" data-price-range="low">
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-10.svg" width="800" height="600" loading="lazy" alt="Иллюстрация диалога с консультантом">
+          </div>
+
+          <p class="product-card__category">Услуги</p>
+          <h3 class="product-card__title">Консультация специалиста</h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 4.9" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>4,9<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(42 отзыва)</span>
+          </p>
+
+          <p class="product-card__description">Индивидуальная консультация на 30 минут: ответим на вопросы по выбору набора.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>800 руб.</strong>
+          </p>
+          <p class="stock stock--in">Запись открыта</p>
+
+          <div class="product-card__actions">
+            <a class="button" href="order.html?product=konsultatsiya">Записаться</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="services" data-price-range="mid">
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
+
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-11.svg" width="800" height="600" loading="lazy" alt="Экран с видеозанятием">
+          </div>
+
+          <p class="product-card__category">Услуги</p>
+          <h3 class="product-card__title">Онлайн-мастер-класс</h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 4.8" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>4,8<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(15 отзывов)</span>
+          </p>
+
+          <p class="product-card__description">Групповое занятие в формате онлайн с разбором практических заданий.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>1600 руб.</strong>
+          </p>
+          <p class="stock stock--in">Запись открыта</p>
+
+          <div class="product-card__actions">
+            <a class="button" href="order.html?product=master-klass">Записаться</a>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="services" data-price-range="high">
+          <span class="product-card__badge product-card__badge--hit">Хит</span>
+
+          <div class="product-card__media">
+            <img class="product-card__img" src="images/product-12.svg" width="800" height="600" loading="lazy" alt="Календарь занятий с отметкой о записи">
+          </div>
+
+          <p class="product-card__category">Услуги</p>
+          <h3 class="product-card__title">Индивидуальное обучение</h3>
+
+          <p class="product-card__rating">
+            <span class="rating" style="--rating: 5.0" aria-hidden="true">★★★★★</span>
+            <span class="product-card__rating-value"><span class="visually-hidden">Рейтинг </span>5,0<span class="visually-hidden"> из 5</span></span>
+            <span class="product-card__rating-count">(8 отзывов)</span>
+          </p>
+
+          <p class="product-card__description">Персональная программа занятий с наставником и обратной связью по результатам.</p>
+
+          <p class="product-card__price">
+            Цена: <strong>4500 руб.</strong>
+          </p>
+          <p class="stock stock--in">Запись открыта</p>
+
+          <div class="product-card__actions">
+            <a class="button" href="order.html?product=obuchenie">Записаться</a>
           </div>
         </article>
         </div>
+
+        <p class="catalog-products__count"></p>
       </section>
     </div>
   </main>
@@ -177,5 +454,6 @@
       <path d="M12 19V5M5 12l7-7 7 7"/>
     </svg>
   </a>
+
 </body>
 </html>

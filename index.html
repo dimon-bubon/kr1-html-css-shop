@@ -19,11 +19,14 @@
 
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li><a href="index.html">Главная</a></li>
+          <li><a href="index.html" aria-current="page">Главная</a></li>
           <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="about.html">О магазине</a></li>
+          <li><a href="delivery.html">Доставка</a></li>
           <li><a href="contacts.html">Контакты</a></li>
           <li><a href="index.html#advantages">Преимущества</a></li>
           <li><a href="index.html#popular">Популярные товары</a></li>
+          <li><a href="index.html#faq">Вопросы</a></li>
           <li><a href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
@@ -134,7 +137,7 @@
             <img class="product-card__img" src="images/product-3.svg" width="800" height="600" loading="lazy" alt="Товар 3: новый набор в зелёной коробке">
           </div>
 
-          <p class="product-card__category">Новинки</p>
+          <p class="product-card__category">Учебные наборы</p>
           <h3 class="product-card__title"><a href="product.html">Товар 3</a></h3>
 
           <p class="product-card__rating">
@@ -158,6 +161,104 @@
           </div>
         </article>
       </div>
+
+      <p class="section__more">
+        <a class="button button--secondary" href="catalog.html">Весь каталог — 12 позиций</a>
+      </p>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="faq__layout">
+        <div class="faq__intro">
+          <h2 id="faq-title">Частые вопросы</h2>
+          <p>
+            Собрали ответы на вопросы, которые покупатели задают чаще всего.
+            Не нашли свой — напишите нам.
+          </p>
+          <div class="cta-box__actions">
+            <a class="button" href="contacts.html">Задать вопрос</a>
+            <a class="button button--secondary" href="order.html">Оформить заявку</a>
+          </div>
+        </div>
+
+        <div class="faq__list">
+          <details class="faq__item" name="faq" open>
+            <summary class="faq__question">Как оформить заказ?</summary>
+            <div class="faq__answer">
+              <p>
+                Нажмите «Заказать» на карточке товара или откройте страницу
+                <a href="order.html">оформления заявки</a>: выберите товар или услугу,
+                укажите количество и контакты. Менеджер свяжется с вами и подтвердит заказ.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">Сколько стоит доставка и как быстро приходит заказ?</summary>
+            <div class="faq__answer">
+              <p>
+                Заказы отправляются в день оформления заявки. По Москве курьер привозит заказ
+                за 1–2 рабочих дня, самовывоз бесплатный. Все способы, сроки и цены —
+                на странице <a href="delivery.html">«Доставка и оплата»</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">Как оплатить заказ?</summary>
+            <div class="faq__answer">
+              <p>
+                Оплатить можно при получении или онлайн банковской картой.
+                Организациям доступен безналичный расчёт по счёту.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">Можно ли вернуть товар?</summary>
+            <div class="faq__answer">
+              <p>
+                Да, в течение 14 дней после получения, если товар не использовался
+                и сохранил товарный вид. Напишите на info@example.com — подскажем, как оформить возврат.
+                Условия описаны в разделе <a href="delivery.html#returns">«Возврат и обмен»</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">Что значит «Под заказ»?</summary>
+            <div class="faq__answer">
+              <p>
+                Этого товара сейчас нет на складе. Мы привезём его за 3–5 дней —
+                срок указан на карточке товара.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">Как записаться на консультацию или мастер-класс?</summary>
+            <div class="faq__answer">
+              <p>
+                Услуги собраны в <a href="catalog.html">каталоге</a> в категории «Услуги».
+                Нажмите «Записаться» — менеджер свяжется с вами и согласует удобное время.
+                Занятия проходят онлайн.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary class="faq__question">Как связаться с поддержкой?</summary>
+            <div class="faq__answer">
+              <p>
+                Позвоните по телефону +7 (900) 000-00-00 или напишите на info@example.com.
+                Мы отвечаем на вопросы в течение рабочего дня. Все контакты —
+                на странице <a href="contacts.html">«Контакты»</a>.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+
     </section>
 
     <section class="section" id="about">

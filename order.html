@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Оформление заявки в учебном интернет-магазине: выберите товар или услугу, способ получения и оставьте контакты.">
+  <title>Оформление заявки — Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Оформление заявки — Учебный интернет-магазин">
+  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+  <meta property="og:image" content="https://dimon-bubon.github.io/kr1-html-css-shop/images/preview.jpg">
+</head>
+<body>
+  <header>
+    <div class="site-header">
+      <a class="site-logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="about.html">О магазине</a></li>
+          <li><a href="delivery.html">Доставка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.html#advantages">Преимущества</a></li>
+          <li><a href="index.html#popular">Популярные товары</a></li>
+          <li><a href="index.html#faq">Вопросы</a></li>
+          <li><a href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span aria-current="page">Оформление заявки</span>
+    </nav>
+
+    <div class="order-layout">
+      <section class="order-box" aria-labelledby="order-title">
+        <h1 id="order-title">Оформление заявки</h1>
+        <p class="order-box__lead">
+          Выберите товар или услугу и оставьте контакты — менеджер свяжется с вами и подтвердит заказ.
+        </p>
+
+        <form id="order-page-form" action="#" method="post" novalidate>
+          <div class="form-row form-row--wide-first">
+            <div class="form-field" data-field>
+              <label for="order-product">Товар или услуга <span class="form-field__required" aria-hidden="true">*</span></label>
+              <select id="order-product" name="product" aria-describedby="order-product-error" required>
+                <option value="" data-price="">Выберите из каталога</option>
+              <optgroup label="Учебные наборы">
+                <option value="tovar-1" data-price="1000">Товар 1 — 1000 руб.</option>
+                <option value="tovar-2" data-price="1500">Товар 2 — 1500 руб.</option>
+                <option value="tovar-3" data-price="2000">Товар 3 — 2000 руб.</option>
+              </optgroup>
+              <optgroup label="Аксессуары">
+                <option value="chekhol" data-price="600">Чехол для набора — 600 руб.</option>
+                <option value="podstavka" data-price="1200">Подставка для набора — 1200 руб.</option>
+                <option value="organayzer" data-price="2400">Органайзер-кейс — 2400 руб.</option>
+              </optgroup>
+              <optgroup label="Материалы">
+                <option value="elementy" data-price="450">Сменные элементы — 450 руб.</option>
+                <option value="komplekt" data-price="1800">Комплект материалов — 1800 руб.</option>
+                <option value="komplekt-plus" data-price="2900">Расширенный комплект материалов — 2900 руб.</option>
+              </optgroup>
+              <optgroup label="Услуги">
+                <option value="konsultatsiya" data-price="800">Консультация специалиста — 800 руб.</option>
+                <option value="master-klass" data-price="1600">Онлайн-мастер-класс — 1600 руб.</option>
+                <option value="obuchenie" data-price="4500">Индивидуальное обучение — 4500 руб.</option>
+              </optgroup>
+              </select>
+              <p class="form-field__error" id="order-product-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field" data-field>
+              <label for="order-quantity">Количество <span class="form-field__required" aria-hidden="true">*</span></label>
+              <input
+                id="order-quantity"
+                name="quantity"
+                type="number"
+                value="1"
+                min="1"
+                max="20"
+                step="1"
+                inputmode="numeric"
+                aria-describedby="order-quantity-error"
+                required
+              >
+              <p class="form-field__error" id="order-quantity-error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field" data-field>
+              <label for="order-name">Имя <span class="form-field__required" aria-hidden="true">*</span></label>
+              <input
+                id="order-name"
+                name="name"
+                type="text"
+                placeholder="Введите ваше имя"
+                minlength="2"
+                autocomplete="given-name"
+                aria-describedby="order-name-error"
+                required
+              >
+              <p class="form-field__error" id="order-name-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-field" data-field>
+              <label for="order-phone">Телефон <span class="form-field__required" aria-hidden="true">*</span></label>
+              <input
+                id="order-phone"
+                name="phone"
+                type="tel"
+                inputmode="tel"
+                placeholder="+7 (900) 000-00-00"
+                pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+                data-pattern-message="Введите номер полностью: +7 (900) 000-00-00"
+                autocomplete="tel"
+                aria-describedby="order-phone-error"
+                required
+              >
+              <p class="form-field__error" id="order-phone-error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="form-field" data-field>
+            <label for="order-email">E-mail <span class="form-field__required" aria-hidden="true">*</span></label>
+            <input
+              id="order-email"
+              name="email"
+              type="email"
+              placeholder="example@mail.ru"
+              autocomplete="email"
+              aria-describedby="order-email-error"
+              required
+            >
+            <p class="form-field__error" id="order-email-error" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field form-field--choice">
+            <fieldset class="choice-group">
+              <legend>Способ получения</legend>
+              <div class="choice-group__options">
+                <label class="choice">
+                  <input class="choice__input" type="radio" name="delivery" value="delivery" checked>
+                  Доставка
+                </label>
+                <label class="choice">
+                  <input class="choice__input" type="radio" name="delivery" value="pickup">
+                  Самовывоз
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-field" id="order-address-box" data-field>
+            <label for="order-address">Адрес доставки <span class="form-field__required" aria-hidden="true">*</span></label>
+            <input
+              id="order-address"
+              name="address"
+              type="text"
+              placeholder="Город, улица, дом, квартира"
+              minlength="5"
+              autocomplete="street-address"
+              aria-describedby="order-address-error"
+              required
+            >
+            <p class="form-field__error" id="order-address-error" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="order-comment">Комментарий</label>
+            <textarea
+              id="order-comment"
+              name="comment"
+              rows="3"
+              placeholder="Удобное время для связи, пожелания по заказу"
+            ></textarea>
+          </div>
+
+          <div class="form-field form-field--checkbox" data-field>
+            <label>
+              <input
+                id="order-agreement"
+                name="agreement"
+                type="checkbox"
+                aria-describedby="order-agreement-error"
+                required
+              >
+              Я согласен на обработку данных <span class="form-field__required" aria-hidden="true">*</span>
+            </label>
+            <p class="form-field__error" id="order-agreement-error" aria-live="polite"></p>
+          </div>
+
+          <p class="order-dialog__note"><span class="form-field__required" aria-hidden="true">*</span> — обязательные поля</p>
+
+          <div class="form-actions">
+            <button class="button button--secondary" type="reset">Очистить</button>
+            <button class="button" type="submit">Отправить заявку</button>
+          </div>
+        </form>
+
+        <div class="order-done" id="order-done" role="status" hidden>
+          <p class="order-dialog__success-icon" aria-hidden="true">&#10003;</p>
+          <h2>Заявка отправлена!</h2>
+          <p id="order-done-text">Мы свяжемся с вами в ближайшее рабочее время.</p>
+          <div class="order-done__actions">
+            <a class="button" href="catalog.html">Вернуться в каталог</a>
+            <a class="button button--secondary" href="index.html">На главную</a>
+          </div>
+        </div>
+      </section>
+
+      <aside class="order-aside" aria-label="Сведения о заявке">
+        <div class="order-summary">
+          <h2>Предварительная сумма</h2>
+          <p class="order-summary__total"><output id="order-total" for="order-product order-quantity">—</output></p>
+          <p class="order-summary__note">Стоимость доставки и итог подтвердит менеджер.</p>
+        </div>
+
+        <section class="order-box" aria-labelledby="steps-title">
+          <h2 id="steps-title">Как проходит заказ</h2>
+          <ol class="steps">
+            <li class="steps__item">
+              <h3 class="steps__title">Заявка</h3>
+              <p class="steps__text">Вы заполняете форму на этой странице.</p>
+            </li>
+            <li class="steps__item">
+              <h3 class="steps__title">Подтверждение</h3>
+              <p class="steps__text">Менеджер связывается с вами в течение рабочего дня.</p>
+            </li>
+            <li class="steps__item">
+              <h3 class="steps__title">Отправка</h3>
+              <p class="steps__text">Отправляем заказ в день подтверждения.</p>
+            </li>
+          </ol>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+
+  <a class="to-top" href="#top" aria-label="Наверх" title="Наверх">
+    <svg class="to-top__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </a>
+
+</body>
+</html>

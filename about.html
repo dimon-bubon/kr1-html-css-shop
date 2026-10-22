@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="О магазине ShopProject: кто мы, наши принципы, как мы работаем и ответы на частые вопросы.">
+  <title>О магазине — Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="О магазине — Учебный интернет-магазин">
+  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+  <meta property="og:image" content="https://dimon-bubon.github.io/kr1-html-css-shop/images/preview.jpg">
+</head>
+<body>
+  <header>
+    <div class="site-header">
+      <a class="site-logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="about.html" aria-current="page">О магазине</a></li>
+          <li><a href="delivery.html">Доставка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.html#advantages">Преимущества</a></li>
+          <li><a href="index.html#popular">Популярные товары</a></li>
+          <li><a href="index.html#faq">Вопросы</a></li>
+          <li><a href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span aria-current="page">О магазине</span>
+    </nav>
+
+    <section class="hero">
+      <h1>О магазине</h1>
+      <p class="page-lead">
+        ShopProject — учебный интернет-магазин. Мы собрали в одном каталоге наборы,
+        аксессуары, материалы и онлайн-услуги и стараемся, чтобы заказ был понятным
+        от первой заявки до получения.
+      </p>
+    </section>
+
+    <section class="section" id="who">
+      <h2>Кто мы</h2>
+      <p>
+        Проект создан как учебный: на нём отрабатываются вёрстка, структура многостраничного
+        сайта и работа с формами. При этом мы относимся к нему как к настоящему магазину:
+        продумываем карточки товаров, условия доставки и ответы на вопросы покупателей.
+      </p>
+    </section>
+
+    <section class="section" id="numbers" aria-labelledby="numbers-title">
+      <h2 id="numbers-title">ShopProject в цифрах</h2>
+      <ul class="stats">
+        <li class="stats__item">
+          <span class="stats__value">2026</span>
+          <span class="stats__label">год запуска</span>
+        </li>
+        <li class="stats__item">
+          <span class="stats__value">12</span>
+          <span class="stats__label">позиций в каталоге</span>
+        </li>
+        <li class="stats__item">
+          <span class="stats__value">1 день</span>
+          <span class="stats__label">до отправки заказа</span>
+        </li>
+        <li class="stats__item">
+          <span class="stats__value">14 дней</span>
+          <span class="stats__label">на возврат товара</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section" id="principles">
+      <h2>Наши принципы</h2>
+
+      <div class="advantages">
+        <div class="advantages__item">
+          <h3>Понятные условия</h3>
+          <p>Цена, наличие и сроки указаны на карточке товара и в разделе доставки.</p>
+        </div>
+        <div class="advantages__item">
+          <h3>Честные отзывы</h3>
+          <p>Показываем оценки покупателей и распределение по звёздам, без скрытых данных.</p>
+        </div>
+        <div class="advantages__item">
+          <h3>Быстрая поддержка</h3>
+          <p>Отвечаем на вопросы в течение рабочего дня по телефону и e-mail.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how" aria-labelledby="how-title">
+      <h2 id="how-title">Как мы работаем</h2>
+      <ol class="steps">
+        <li class="steps__item">
+          <h3 class="steps__title">Вы оставляете заявку</h3>
+          <p class="steps__text">Через кнопку «Заказать» в каталоге или на странице оформления заявки.</p>
+        </li>
+        <li class="steps__item">
+          <h3 class="steps__title">Мы подтверждаем детали</h3>
+          <p class="steps__text">Менеджер уточняет количество, способ получения и удобное время для связи.</p>
+        </li>
+        <li class="steps__item">
+          <h3 class="steps__title">Отправляем заказ</h3>
+          <p class="steps__text">Заказы отправляются в день подтверждения, услуги проходят онлайн.</p>
+        </li>
+        <li class="steps__item">
+          <h3 class="steps__title">Остаёмся на связи</h3>
+          <p class="steps__text">Помогаем с вопросами после покупки и принимаем возвраты в течение 14 дней.</p>
+        </li>
+      </ol>
+    </section>
+
+    <aside class="aside-info">
+      <h2>Остались вопросы?</h2>
+      <p>Ответы на самые частые вопросы собраны на главной странице. Если не нашли нужный — напишите нам.</p>
+      <div class="cta-box__actions">
+        <a class="button" href="index.html#faq">Частые вопросы</a>
+        <a class="button button--secondary" href="contacts.html">Контакты</a>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+
+  <a class="to-top" href="#top" aria-label="Наверх" title="Наверх">
+    <svg class="to-top__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </a>
+
+</body>
+</html>

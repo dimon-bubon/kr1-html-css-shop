@@ -54,7 +54,17 @@ function getErrorText(control) {
   }
 
   if (validity.rangeUnderflow) {
-    return 'Выберите сегодняшнюю или будущую дату';
+    return control.type === 'date'
+      ? 'Выберите сегодняшнюю или будущую дату'
+      : `Минимальное значение: ${control.min}`;
+  }
+
+  if (validity.rangeOverflow) {
+    return `Максимальное значение: ${control.max}`;
+  }
+
+  if (validity.badInput || validity.stepMismatch) {
+    return 'Введите целое число';
   }
 
   return control.validationMessage;
@@ -282,5 +292,84 @@ if (reviewForm) {
   // Когда пользователь начинает писать новый отзыв, прячем старое сообщение.
   reviewForm.addEventListener('input', () => {
     reviewSuccess.hidden = true;
+  });
+}
+
+/* ===============================
+   6. Страница заявки (order.html)
+   =============================== */
+
+const orderPageForm = document.getElementById('order-page-form');
+
+if (orderPageForm) {
+  const productSelect = document.getElementById('order-product');
+  const quantityInput = document.getElementById('order-quantity');
+  const totalOutput = document.getElementById('order-total');
+  const addressBox = document.getElementById('order-address-box');
+  const addressInput = document.getElementById('order-address');
+  const orderDone = document.getElementById('order-done');
+  const orderDoneText = document.getElementById('order-done-text');
+
+  // Если пришли по ссылке order.html?product=..., выбираем этот товар.
+  const wantedProduct = new URLSearchParams(window.location.search).get('product');
+  const hasWantedProduct = Array.from(productSelect.options).some(
+    (option) => option.value === wantedProduct
+  );
+
+  if (wantedProduct && hasWantedProduct) {
+    productSelect.value = wantedProduct;
+  }
+
+  // Пересчитываем сумму: цена выбранной позиции × количество.
+  const updateTotal = () => {
+    const option = productSelect.selectedOptions[0];
+    const price = Number(option && option.dataset.price);
+    const quantity = Number(quantityInput.value);
+
+    totalOutput.textContent =
+      price && quantity > 0
+        ? `${(price * quantity).toLocaleString('ru-RU')} руб.`
+        : '—';
+  };
+
+  // Адрес нужен только для доставки. Отключённое поле не проверяется формой.
+  const updateDelivery = () => {
+    const isPickup = orderPageForm.elements['delivery'].value === 'pickup';
+
+    addressBox.hidden = isPickup;
+    addressInput.disabled = isPickup;
+  };
+
+  productSelect.addEventListener('change', updateTotal);
+  quantityInput.addEventListener('input', updateTotal);
+  orderPageForm.elements['delivery'].forEach((radio) => {
+    radio.addEventListener('change', updateDelivery);
+  });
+
+  // После reset() браузер возвращает значения по умолчанию — пересчитываем.
+  orderPageForm.addEventListener('reset', () => {
+    setTimeout(() => {
+      updateTotal();
+      updateDelivery();
+      clearFormErrors(orderPageForm);
+    }, 0);
+  });
+
+  updateTotal();
+  updateDelivery();
+
+  setupForm(orderPageForm, () => {
+    const option = productSelect.selectedOptions[0];
+
+    // В тексте option после тире стоит цена — в подтверждении она не нужна.
+    const productName = option.textContent.split(' — ')[0].trim();
+
+    orderDoneText.textContent =
+      `Заявка: «${productName}», количество — ${quantityInput.value}. ` +
+      'Мы свяжемся с вами в ближайшее рабочее время.';
+
+    orderPageForm.hidden = true;
+    orderDone.hidden = false;
+    orderDone.scrollIntoView({ block: 'center' });
   });
 }

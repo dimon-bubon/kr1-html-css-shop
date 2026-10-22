@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Доставка и оплата в учебном интернет-магазине: способы получения, сроки, стоимость, оплата и возврат.">
+  <title>Доставка и оплата — Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Доставка и оплата — Учебный интернет-магазин">
+  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+  <meta property="og:image" content="https://dimon-bubon.github.io/kr1-html-css-shop/images/preview.jpg">
+</head>
+<body>
+  <header>
+    <div class="site-header">
+      <a class="site-logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="about.html">О магазине</a></li>
+          <li><a href="delivery.html" aria-current="page">Доставка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.html#advantages">Преимущества</a></li>
+          <li><a href="index.html#popular">Популярные товары</a></li>
+          <li><a href="index.html#faq">Вопросы</a></li>
+          <li><a href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span aria-current="page">Доставка и оплата</span>
+    </nav>
+
+    <section class="hero">
+      <h1>Доставка и оплата</h1>
+      <p class="page-lead">
+        Отправляем заказы в день оформления заявки. Здесь собраны сроки, стоимость
+        и способы оплаты, а также условия возврата.
+      </p>
+    </section>
+
+    <section class="section" id="delivery-methods">
+      <div class="table-scroll">
+        <table class="data-table">
+          <caption>Способы получения заказа</caption>
+          <thead>
+            <tr>
+              <th scope="col">Способ</th>
+              <th scope="col">Срок</th>
+              <th scope="col">Стоимость</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Курьер по Москве</th>
+              <td>1–2 рабочих дня</td>
+              <td>300 руб., от 3000 руб. — бесплатно</td>
+            </tr>
+            <tr>
+              <th scope="row">Пункт выдачи</th>
+              <td>2–4 рабочих дня</td>
+              <td>150 руб.</td>
+            </tr>
+            <tr>
+              <th scope="row">Самовывоз (г. Москва, учебный проект)</th>
+              <td>в день заявки</td>
+              <td>бесплатно</td>
+            </tr>
+            <tr>
+              <th scope="row">Транспортная компания по России</th>
+              <td>3–7 рабочих дней</td>
+              <td>по тарифу перевозчика</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Консультации и мастер-классы проходят онлайн, доставка для них не нужна.</p>
+    </section>
+
+    <section class="section" id="payment">
+      <h2>Способы оплаты</h2>
+
+      <div class="advantages">
+        <div class="advantages__item">
+          <h3>При получении</h3>
+          <p>Оплата наличными или картой курьеру либо в пункте выдачи.</p>
+        </div>
+        <div class="advantages__item">
+          <h3>Онлайн картой</h3>
+          <p>Оплата банковской картой после подтверждения заявки менеджером.</p>
+        </div>
+        <div class="advantages__item">
+          <h3>По счёту</h3>
+          <p>Безналичный расчёт для организаций: пришлём счёт на e-mail.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="returns" aria-labelledby="returns-title">
+      <h2 id="returns-title">Возврат и обмен</h2>
+      <p>Товар можно вернуть в течение 14 дней после получения, если он не использовался и сохранил товарный вид.</p>
+
+      <ol class="steps">
+        <li class="steps__item">
+          <h3 class="steps__title">Напишите нам</h3>
+          <p class="steps__text">Отправьте на info@example.com номер заказа и причину возврата.</p>
+        </li>
+        <li class="steps__item">
+          <h3 class="steps__title">Передайте товар</h3>
+          <p class="steps__text">Привезите его на самовывоз или передайте курьеру.</p>
+        </li>
+        <li class="steps__item">
+          <h3 class="steps__title">Получите деньги</h3>
+          <p class="steps__text">Вернём оплату тем же способом в течение 5 рабочих дней.</p>
+        </li>
+      </ol>
+    </section>
+
+    <aside class="aside-info">
+      <h2>Нужна помощь с выбором?</h2>
+      <p>Посмотрите ответы на частые вопросы или оформите заявку — менеджер всё подскажет.</p>
+      <div class="cta-box__actions">
+        <a class="button" href="order.html">Оформить заявку</a>
+        <a class="button button--secondary" href="index.html#faq">Частые вопросы</a>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+
+  <a class="to-top" href="#top" aria-label="Наверх" title="Наверх">
+    <svg class="to-top__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </a>
+
+</body>
+</html>
